@@ -1,0 +1,30 @@
+@(signupForm: Form[models.SignUpData], title: String)
+
+@import helper._
+
+@main("Sign Up") {
+	
+	<div class="panel panel-success">
+		<div class="panel-body" style="margin-top: 100px; margin-left: 415px; width: 1100px;">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="well form-horizontal">
+						@helper.form(action = routes.Application.addData, 'id -> "signupForm") {
+							<fieldset>
+								@inputText(signupForm("email"), args = 'class -> "form-control")
+								@inputPassword(signupForm("password"), args = 'class -> "form-control")
+								@inputPassword(signupForm("confirm_password"), args = 'class -> "form-control")
+							</fieldset>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-3">
+									<button class="btn btn-primary" type="submit" id="submit">Submit</button>
+									<button class="btn btn-default" id="cancel">Cancel</button>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}

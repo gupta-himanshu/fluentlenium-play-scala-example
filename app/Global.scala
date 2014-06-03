@@ -14,7 +14,7 @@ object Global extends GlobalSettings with domains {
   override def onStart(app: Application): Unit = {
     Logger.info("Application has started")
 
-    try {
+    /*try {
       Connection.databaseObject.withSession { implicit session: Session =>
         dataTable.ddl.create
         Logger.info("All tables have been created")
@@ -22,7 +22,7 @@ object Global extends GlobalSettings with domains {
 
     } catch {
       case ex: Exception => Logger.info(ex.getMessage() + ex.printStackTrace())
-    }
+    }*/
   }
 
   override def onStop(app: Application): Unit = {

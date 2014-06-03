@@ -40,7 +40,7 @@ object Application extends Controller {
       response.append(in.readLine)
       //    }
     }
-    println()
+    println("")
     in.close()
     val nullExpr = "null".r
     val dataString = nullExpr.replaceAllIn(response.toString, "")
